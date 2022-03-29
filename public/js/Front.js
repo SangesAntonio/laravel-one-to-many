@@ -50036,4 +50036,4 @@ module.exports = __webpack_require__(/*! C:\Users\sange\Desktop\boolean\laravel\
 
 /***/ })
 
-/****
+/******/ });

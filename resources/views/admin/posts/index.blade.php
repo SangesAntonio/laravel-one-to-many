@@ -15,7 +15,7 @@
             <th scope="col">id</th>
             <th scope="col">Title</th>
             <th scope="col">Contenuto</th>
-            <th scope="col">slug</th>
+            <th scope="col">Category</th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
 
             <td colspan="1">{{$post->title}}</th>
             <td colspan="1">{{$post->content}}</td>
-            <td colspan='1'>{{$post->slug}}</td>
+            <td colspan='1'>{{$post->category->label}}</td>
             <td><a href="{{route('admin.posts.show', $post->id)}}" class="btn btn-info">Info</a></td>
             <td><a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-light"><i class="fa fa-pencil"></i></a></td>
             <td>
