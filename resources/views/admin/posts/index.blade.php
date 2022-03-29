@@ -25,7 +25,11 @@
 
             <td colspan="1">{{$post->title}}</th>
             <td colspan="1">{{$post->content}}</td>
-            <td colspan='1'>{{$post->category->label}}</td>
+            <td colspan='1'>
+              @if($post->category)
+              <span class="badge badge-pill badge-{{$post->category->color}}">{{$post->category->label}}</span>
+              @endif
+            </td>
             <td><a href="{{route('admin.posts.show', $post->id)}}" class="btn btn-info">Info</a></td>
             <td><a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-light"><i class="fa fa-pencil"></i></a></td>
             <td>
@@ -79,5 +83,4 @@
 @endsection
 
 <style>
-  
 </style>

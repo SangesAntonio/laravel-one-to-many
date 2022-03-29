@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Post;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -25,9 +26,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Category $category)
     {
-        return view('admin.posts.create');
+        $categories = Category::all();
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -41,7 +43,8 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:100|min:2',
             'content' => 'required',
-            'image' => 'unique:posts'
+            'image' => 'unique:posts',
+            'category_id' => 'nullable|exists:categories,id'
 
         ], [
             'required' => 'Il campo :attribute è obbligatorio',
