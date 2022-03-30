@@ -16,8 +16,8 @@ class CategorySeeder extends Seeder
             ['label' => 'Attualità', 'color' => 'primary'],
             ['label' => 'Tecnologia', 'color' => 'success'],
             ['label' => 'Sport', 'color' => 'danger'],
-            ['label' => 'Gossip', 'color' => 'ligth'],
-            ['label' => 'Politica', 'color' => 'dark'],
+            ['label' => 'Gossip', 'color' => 'light'],
+            ['label' => 'Politica', 'color' => 'warning'],
         ];
 
         foreach ($categories as $category) {

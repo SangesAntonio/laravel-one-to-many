@@ -18,6 +18,16 @@
             <label for="image" class="form-label">Carica immagine</label>
             <input type="text" class="form-control" id="image" placeholder="Inserisci url immagine" name="imag" value="{{old('image', $post->image)}}">
           </div>
+          <div class="form-group w-25">
+            <label for="exampleFormControlSelect1">Scegli la categoria</label>
+            <select class="form-control" id="exampleFormControlSelect1" name='category_id'>
+                <option value="">Nessuna categoria</option>
+                @foreach($categories as $category)
+              <option @if(old('category_id', $post->category_id) == $category->id) selected @endif value="{{$category->id}}">{{$category->label}}</option>
+              @endforeach
+              
+            </select>
+          </div>
 
           <button type="submit" class='btn btn-primary'>Salva modifiche</button>
 
